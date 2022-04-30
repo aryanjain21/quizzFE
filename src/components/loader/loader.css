@@ -1,0 +1,17 @@
+.loader{
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 999;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh
+   }
+
+   .hide{
+      display:"none"
+   }
