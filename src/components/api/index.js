@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from 'axios';
 
 export const userSignup = (data) => {
     return axios.post(`${process.env.REACT_APP_BACKEND}user/auth/register`, data)
