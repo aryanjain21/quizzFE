@@ -50,8 +50,8 @@ const Login = () => {
     try {
       setLoading(true);
       const res = await userLogin({
-        email: "guest@yopmail.com",
-        password: "12345678",
+        email: "guest@example.com",
+        password: "guest@123",
       });
       toast.success(res.data.message);
       let user = res.data.data;
