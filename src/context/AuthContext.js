@@ -1,7 +1,4 @@
-import { createContext, useContext, useReducer} from 'react'
-
-
-
+import { createContext, useContext, useReducer } from 'react';
 
 const AuthContext = createContext();
 
@@ -29,24 +26,24 @@ const authReducer = (state, action) => {
 }
 
 let intialState = {
-    name:'',
+    name: '',
     email: '',
-    token:''
+    token: ''
 }
 
 export const AuthProvider = ({ children }) => {
-    const userState = JSON.parse(localStorage.getItem("quizMaster")) || {name:'',email:'',token:''};
-    if(userState){
-        intialState.name= userState.name
+    const userState = JSON.parse(localStorage.getItem("quizMaster")) || { name: '', email: '', token: '' };
+    if (userState) {
+        intialState.name = userState.name
         intialState.token = userState.token
         intialState.email = userState.email
     }
 
-    const [state, dispatch] = useReducer(authReducer,  intialState )
+    const [state, dispatch] = useReducer(authReducer, intialState)
 
     return (
         <>
-            <AuthContext.Provider value={{user:state,userDispatch:dispatch}}>
+            <AuthContext.Provider value={{ user: state, userDispatch: dispatch }}>
                 {children}
             </AuthContext.Provider>
         </>)

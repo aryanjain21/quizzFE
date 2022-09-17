@@ -1,7 +1,4 @@
-import { createContext, useContext, useReducer} from 'react'
-
-
-
+import { createContext, useContext, useReducer } from 'react';
 
 const QuizContext = createContext();
 
@@ -10,7 +7,7 @@ const quizReducer = (state, action) => {
         case 'SET_QUIZ':
             return {
                 quiz: action.payload,
-                
+
             }
 
         default:
@@ -20,17 +17,17 @@ const quizReducer = (state, action) => {
 }
 
 let intialState = {
-    quiz :[]
+    quiz: []
 }
 
 export const QuizProvider = ({ children }) => {
-    
 
-    const [state, dispatch] = useReducer(quizReducer,  intialState )
+
+    const [state, dispatch] = useReducer(quizReducer, intialState)
 
     return (
         <>
-            <QuizContext.Provider value={{quiz:state,quizDispatch:dispatch}}>
+            <QuizContext.Provider value={{ quiz: state, quizDispatch: dispatch }}>
                 {children}
             </QuizContext.Provider>
         </>)

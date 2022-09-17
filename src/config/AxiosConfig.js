@@ -5,9 +5,6 @@
 //  */
 import axios from "axios";
 
-//import store from "../Redux/store"
-//import { LOGOUT } from "../Redux/login/Types"
-
 (function (axios) {
 
     axios.interceptors.request.use(function (req) {
